@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsedCars.Web", "UsedCars.Web\UsedCars.Web.csproj", "{A29EFFD2-0B84-464C-898B-9BF147975831}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsedCars.DAL", "UsedCars.DAL\UsedCars.DAL.csproj", "{28F76184-43B6-48D1-883E-EE903BDF86C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsedCars.Entities", "UsedCars.Entities\UsedCars.Entities.csproj", "{61EA127D-3EA6-4212-AD3B-2B256353D44F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{A29EFFD2-0B84-464C-898B-9BF147975831}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A29EFFD2-0B84-464C-898B-9BF147975831}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A29EFFD2-0B84-464C-898B-9BF147975831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F76184-43B6-48D1-883E-EE903BDF86C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F76184-43B6-48D1-883E-EE903BDF86C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F76184-43B6-48D1-883E-EE903BDF86C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F76184-43B6-48D1-883E-EE903BDF86C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61EA127D-3EA6-4212-AD3B-2B256353D44F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EA127D-3EA6-4212-AD3B-2B256353D44F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EA127D-3EA6-4212-AD3B-2B256353D44F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EA127D-3EA6-4212-AD3B-2B256353D44F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
