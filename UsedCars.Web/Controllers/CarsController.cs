@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using UsedCars.Domain;
+using UsedCars.Domain.Models;
 
 namespace UsedCars.Controllers;
 
@@ -6,16 +8,16 @@ namespace UsedCars.Controllers;
 [Route("[controller]")]
 public class CarsController: ControllerBase
 {
-    private readonly ILogger<CarsController> _logger;
+    private readonly ICarManager _carManager;
 
-    public CarsController(ILogger<CarsController> logger)
+    public CarsController(ICarManager carManager)
     {
-        _logger = logger;
+        _carManager = carManager;
     }
 
     [HttpGet]
-    public IEnumerable<int> Get()
+    public async Task<IEnumerable<CarModel>> Get()
     {
-        return Enumerable.Range(1, 5);
+        return await _carManager.GetCars();
     }
 }

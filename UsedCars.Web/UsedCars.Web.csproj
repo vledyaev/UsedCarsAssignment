@@ -27,6 +27,14 @@
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**;$(SpaRoot).env.development.local" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="client-app\src\components" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\UsedCars.Domain\UsedCars.Domain.csproj" />
+    </ItemGroup>
+
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
         <!-- Ensure Node.js is installed -->
         <Exec Command="node --version" ContinueOnError="true">
