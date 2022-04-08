@@ -1,8 +1,17 @@
+using UsedCars.DAL;
+using UsedCars.Domain;
+using UsedCars.Domain.MappingProfiles;
+using UsedCars.UnitOfWork;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(typeof(CarsMappingProfile));
+builder.Services.AddScoped<UsedCarsContext, UsedCarsContext>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<ICarManager, CarManager>();
 
 var app = builder.Build();
 
