@@ -19,10 +19,4 @@
       <ProjectReference Include="..\UsedCars.Entities\UsedCars.Entities.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="warehouses.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
 </Project>
