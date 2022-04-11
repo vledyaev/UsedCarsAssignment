@@ -8,6 +8,7 @@ public class CarsMappingProfile: Profile
 {
     public CarsMappingProfile()
     {
-        CreateMap<Car, CarModel>();
+        CreateMap<Car, CarModel>()
+            .ForMember(d => d.Warehouse, opt => opt.MapFrom(src => src.Warehouse.Name));
     }
 }

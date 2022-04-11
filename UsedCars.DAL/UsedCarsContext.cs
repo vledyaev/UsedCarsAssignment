@@ -1,7 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using System.Diagnostics;
-using UsedCars.DAL.InitializationModels;
 using UsedCars.Entities;
 
 namespace UsedCars.DAL;

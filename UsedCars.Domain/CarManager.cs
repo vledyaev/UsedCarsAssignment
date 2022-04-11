@@ -18,6 +18,6 @@ public class CarManager: ICarManager
 
     public async Task<IEnumerable<CarModel>> GetCars()
     {
-        return await _mapper.ProjectTo<CarModel>(_unitOfWork.Cars.GetAll()).ToListAsync();
+        return await _mapper.ProjectTo<CarModel>(_unitOfWork.Cars.GetAll().Include(x => x.Warehouse)).ToListAsync();
     }
 }

@@ -29,10 +29,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="client-app\src\components" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\UsedCars.Domain\UsedCars.Domain.csproj" />
     </ItemGroup>
 
