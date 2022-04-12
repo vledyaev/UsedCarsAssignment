@@ -12,6 +12,7 @@ builder.Services.AddAutoMapper(typeof(CarsMappingProfile));
 builder.Services.AddScoped<UsedCarsContext, UsedCarsContext>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICarManager, CarManager>();
+builder.Services.AddScoped<IWarehouseManager, WarehouseManager>();
 
 var app = builder.Build();
 

@@ -4,10 +4,10 @@ using UsedCars.Entities;
 
 namespace UsedCars.Domain.MappingProfiles;
 
-public class CarsMappingProfile: Profile
+public class WarehouseMappingProfile: Profile
 {
-    public CarsMappingProfile()
+    public WarehouseMappingProfile()
     {
-        CreateMap<Car, CarModel>();
+        CreateMap<Warehouse, WarehouseModel>();
     }
 }

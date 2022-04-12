@@ -1,8 +1,9 @@
 ﻿import { useEffect, useState } from "react";
-import {getCars} from "../../middleware/carsMiddleware";
+import {getCars, getWarehouseDetails} from "../../middleware/carsMiddleware";
 import CircularProgress from '@mui/material/CircularProgress';
-import { DataGrid, GridSortingInitialState } from '@mui/x-data-grid';
+import {DataGrid, GridRowParams, GridSortingInitialState} from '@mui/x-data-grid';
 import columns from './columns';
+import CarDetails, { WarehouseDetails } from "../carDetails";
 
 interface Car {
     make: string;
@@ -18,9 +19,11 @@ const sorting: GridSortingInitialState = {
     ]
 }
 
-const CarsList = (): JSX.Element => {
+const CarsList = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [cards, setCards] = useState<Car[]>([]);
+    const [isCardDetailsOpened, setIsCardDetailsOpened] = useState<boolean>(false);
+    const [carDetails, setCarDetails] = useState<WarehouseDetails|null>(null);
 
     useEffect(() => {
         (async () => {
@@ -35,11 +38,30 @@ const CarsList = (): JSX.Element => {
         })()
     }, [])
 
+    const onRowClick = (params: GridRowParams):void => {
+        if (params.row.licensed) {
+            setIsLoading(true);
+            (async () => {
+                try {
+                    const warehouse = await getWarehouseDetails(params.row.warehouseId);
+                    setCarDetails(warehouse);
+                    setIsCardDetailsOpened(true);
+                    setIsLoading(false);
+                }
+                catch {
+                    console.log('error')
+                }
+            })()
+        }
+    }
+
     return (
         <>
             <div className="grid-container">
                 <div className="grid">
                     <DataGrid
+                        isRowSelectable={(params: GridRowParams) => params.row.licensed}
+                        onRowClick={onRowClick}
                         initialState={{
                             sorting: sorting
                         }}
@@ -50,12 +72,14 @@ const CarsList = (): JSX.Element => {
                     />
                 </div>
             </div>
-
+            <CarDetails
+                open={isCardDetailsOpened}
+                onClose={() => setIsCardDetailsOpened(false)}
+                model={carDetails}
+            />
             { isLoading &&
                 <div className="loader-wrapper">
-                    <CircularProgress sx={{
-
-                    }} />
+                    <CircularProgress />
                 </div>  }
         </>
     )

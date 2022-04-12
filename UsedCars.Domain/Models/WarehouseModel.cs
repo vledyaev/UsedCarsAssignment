@@ -1,9 +1,7 @@
-﻿namespace UsedCars.Entities;
+﻿namespace UsedCars.Domain.Models;
 
-public class Warehouse
+public class WarehouseModel
 {
-    public int Id { get; set; }
-
     public string Name { get; set; }
 
     public string Location { get; set; }
@@ -11,6 +9,4 @@ public class Warehouse
     public decimal Latitude { get; set; }
 
     public decimal Longitude { get; set; }
-
-    public List<Car> Cars { get; } = new();
 }

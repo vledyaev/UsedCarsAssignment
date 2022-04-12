@@ -9,7 +9,6 @@ const columns: GridColDef[] = [
     {field: 'make', headerName: 'Make', flex: 1},
     {field: 'model', headerName: 'Model', flex: 1},
     {field: 'year', headerName: 'Year', flex: 1, type: 'date'},
-    {field: 'warehouse', headerName: 'Warehouse', flex: 1},
     {field: 'price', headerName: 'Price $', flex: 1, type: 'number'},
     {
         field: 'dateAdded',

@@ -16,5 +16,5 @@ public class CarModel
 
     public int Year { get; set; }
 
-    public string Warehouse { get; set; }
+    public int WarehouseId { get; set; }
 }
