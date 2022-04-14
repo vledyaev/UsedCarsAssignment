@@ -24,3 +24,11 @@ html, body {
     justify-content: center;
     align-items: center;
 }
+
+.shopping-card-preview {
+    display: flex;
+}
+
+.MuiButtonBase-root.MuiChip-root {
+    margin-left: auto;
+}
